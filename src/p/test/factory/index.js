@@ -1,6 +1,6 @@
 import NewYorkPizzaFactory from "./pizzaFactorys/newyorkPizzaFactory";
 import CustomePizzaFactory from "./pizzaFactorys/customePizzaFactory";
-
+import Slider from "./component/slider/slider";
 
 export default class Index{
    constructor(){
@@ -10,6 +10,18 @@ export default class Index{
        let Cfactory=new CustomePizzaFactory();
        let pizza1=Cfactory.createOrder("small");
        console.log(pizza1)
+       this.init();
+   }
+
+   init(){
+       let silder=new Slider({el:$(".huakuai"),max:5000,min:300,step:1000,showEl:$("#aa")})
+       $("#aa").on("input",function(){
+           var value=$(this).val();
+           
+            silder.fire("showEl:update",$(this).val())
+           
+           
+       })
    }
 }
 new Index();

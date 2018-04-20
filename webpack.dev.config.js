@@ -9,7 +9,7 @@ var fs = require('fs');
 var path = require('path');
 var glob = require('glob');
 module.exports = {
-    entry: entries ("./src/p/test/**/*.js"),
+    entry: entries ("./src/p/test/factory/*.js"),
     // {
     //     index:"./src/my/index"
     // },
@@ -50,7 +50,7 @@ module.exports = {
         disableHostCheck: true,
         port:7777
     },
-    plugins: plugins(PageEntries ("./s/test/**/*.html",false))
+    plugins: plugins(PageEntries ("./s/test/factory/*.html",false))
     //[
         
         // new HtmlwebpackPlugin({
