@@ -24,4 +24,11 @@ export default class Index{
        })
    }
 }
-new Index();
+class Singlon {
+    static single={a:1};
+    constructor(){
+        return Singlon.single;
+    }
+}
+console.log(new Singlon().a=4);
+console.log(new Singlon())

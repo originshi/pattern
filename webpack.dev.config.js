@@ -8,8 +8,9 @@ require("babel-polyfill");
 var fs = require('fs');
 var path = require('path');
 var glob = require('glob');
+var root="command";
 module.exports = {
-    entry: entries ("./src/p/test/factory/*.js"),
+    entry: entries (`./src/p/test/${root}/*.js`),
     // {
     //     index:"./src/my/index"
     // },
@@ -50,7 +51,7 @@ module.exports = {
         disableHostCheck: true,
         port:7777
     },
-    plugins: plugins(PageEntries ("./s/test/factory/*.html",false))
+    plugins: plugins(PageEntries (`./s/test/${root}/*.html`,false))
     //[
         
         // new HtmlwebpackPlugin({
@@ -80,7 +81,7 @@ function plugins(arr){
         array.push(new HtmlwebpackPlugin(arr[i]))
     }
     array.push(new webpack.HotModuleReplacementPlugin())
-    array.push( new OpenBrowserPlugin({ url: 'http://localhost:7777/login.html' }) )
+    array.push( new OpenBrowserPlugin({ url: `http://localhost:7777/${root}.html` }) )
     console.log("1111",array)
     return array;
 }

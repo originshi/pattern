@@ -1,0 +1,9 @@
+
+1.创建data/db  和data/lg   文件夹
+2.
+
+
+
+
+mongod --dbpath e:\data\db
+mongo
